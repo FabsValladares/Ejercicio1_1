@@ -6,28 +6,157 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/RESTAR"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:backgroundTint="#00FFFFFF"
+        android:layout_height="362dp"
+        android:background="#4771a3"
+        android:backgroundTint="#4771a3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MULTIPLICAR"
-        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck"
-        tools:srcCompat="@drawable/menos" />
+        app:layout_constraintTop_toBottomOf="@+id/num2"
+        app:layout_constraintVertical_bias="0.952" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="181dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/alata"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="DIVISION"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/DIVISION"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="181dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        android:fontFamily="@font/alata"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="MULTIPLICACIÓN"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/MULTI"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/alata"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="SUMA"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/SUMA"
+        app:layout_constraintTop_toBottomOf="@+id/num2"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="181dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/alata"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="RESTA"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/RESTA"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/DIVISION"
+        android:layout_width="84dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="DIVISION"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RESTA"
+        app:srcCompat="@drawable/division"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/RESTA"
+        android:layout_width="85dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="RESTA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SUMA"
+        app:srcCompat="@drawable/menos"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/SUMA"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="#00FFFFFF"
+        android:foregroundGravity="center"
+        android:text="SUMA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num2"
+        app:srcCompat="@drawable/mas"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/MULTI"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="MULTIPLICACIÓN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DIVISION"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/veces"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/num2"
-        android:layout_width="308dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
+        android:autofillHints=""
         android:backgroundTint="#3F51B5"
         android:ems="10"
         android:fontFamily="@font/alata"
@@ -41,8 +170,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:ignore="HardcodedText,TouchTargetSizeCheck"
-        android:autofillHints="" />
+        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView5"
@@ -59,11 +187,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num"
+        app:layout_constraintTop_toBottomOf="@+id/operacion"
         tools:ignore="HardcodedText,TextSizeCheck" />
 
     <EditText
-        android:id="@+id/num"
+        android:id="@+id/operacion"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="50dp"
@@ -108,68 +236,24 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_height="103dp"
+        android:layout_height="101dp"
         android:background="#8ab3cf"
         android:backgroundTint="#8ab3cf"
         android:fontFamily="@font/alata"
         android:foregroundTint="#000000"
         android:gravity="center"
         android:text="CUATRO OPERACIONES BASICAS"
+        android:textColor="#000000"
         android:textColorHighlight="#000000"
         android:textColorHint="#040404"
         android:textColorLink="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
-    <ImageButton
-        android:id="@+id/MULTIPLICAR"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DIVISION"
-        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck"
-        tools:srcCompat="@drawable/veces" />
-
-    <ImageButton
-        android:id="@+id/DIVISION"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num2"
-        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck,UnknownId"
-        tools:srcCompat="@drawable/division" />
-
-    <ImageButton
-        android:id="@+id/SUMAR"
-        android:layout_width="0dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RESTAR"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck"
-        tools:srcCompat="@drawable/mas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

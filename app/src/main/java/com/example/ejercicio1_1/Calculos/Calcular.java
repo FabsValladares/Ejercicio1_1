@@ -1,12 +1,43 @@
 package com.example.ejercicio1_1.Calculos;
 
-public class Calcular {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Calcular implements Parcelable {
+
+    private Double numero1;
+    private Double  numero2;
+    private Double  resultado;
+    private String Operacion;
+
+
     public Calcular (Double numero1, Double numero2, Double resultado, String Operacion ){
         this.numero1=numero1;
         this.numero2=numero2;
         this.resultado=resultado;
         this.Operacion=Operacion;
     }
+
+    protected Calcular(Parcel in) {
+        numero1 = in.readDouble();
+        numero2 = in.readDouble();
+        resultado = in.readDouble();
+        Operacion = in.readString();
+    }
+
+    public static final Creator<Calcular> CREATOR = new Creator<Calcular>() {
+        @Override
+        public Calcular createFromParcel(Parcel in) {
+            return new Calcular(in);
+        }
+
+        @Override
+        public Calcular[] newArray(int size) {
+            return new Calcular[size];
+        }
+    };
 
     public Double getNumero1() {
         return numero1;
@@ -40,8 +71,17 @@ public class Calcular {
         Operacion = operacion;
     }
 
-    private Double numero1;
-    private Double  numero2;
-    private Double  resultado;
-    private String Operacion;
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeDouble(numero1);
+        dest.writeDouble(numero2);
+        dest.writeDouble(resultado);
+        dest.writeString(Operacion);
+    }
 }
