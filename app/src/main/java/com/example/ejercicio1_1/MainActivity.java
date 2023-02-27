@@ -120,13 +120,17 @@ public class MainActivity extends AppCompatActivity {
                 nu1 = Double.parseDouble(one);
                 two = num2.getText().toString();
                 nu2 = Double.parseDouble(two);
-                resulta = operaciondivision(nu1, nu2);
-                Opera = "dividir";
-                Log.d("Info",resulta+""+Opera);
-                Intent intent = new Intent(MainActivity.this, ActivityResultados.class);
-                Calcular calculo= new Calcular(nu1,nu2,resulta,Opera);
-                intent.putExtra("calculo", calculo);
-                startActivity(intent);
+                    if ( nu2==0) {
+                        Toast.makeText(getApplicationContext(), "NO PUEDE DIVIDIR POR CERO" ,Toast.LENGTH_LONG).show();
+                    } else {
+                        resulta = operaciondivision(nu1, nu2);
+                        Opera = "dividir";
+                        Log.d("Info",resulta+""+Opera);
+                        Intent intent = new Intent(MainActivity.this, ActivityResultados.class);
+                        Calcular calculo= new Calcular(nu1,nu2,resulta,Opera);
+                        intent.putExtra("calculo", calculo);
+                        startActivity(intent);
+                    }
 
             }}
         });
@@ -151,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         double r;
         r=n1/n2;
         return r;
+
     }
 
     public double operacionmulti(double n1, double n2){
