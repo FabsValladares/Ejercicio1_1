@@ -2,6 +2,7 @@ package com.example.ejercicio1_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.icu.text.IDNA;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     String Opera,one,two;
 
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         multiplicar = (Button) findViewById(R.id.MULTI);
         Dividir = (Button) findViewById(R.id.DIVISION);
 
-
         sumar.setOnClickListener(new View.OnClickListener() {
             @Override
 
@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
-                two = num1.getText().toString();
-                nu2 = Double.parseDouble(one);
+                two = num2.getText().toString();
+                nu2 = Double.parseDouble(two);
                 resulta = operacionsuma(nu1, nu2);
                 Opera = "Suma";
                 Calcular calculo= new Calcular(nu1,nu2,resulta,Opera);
@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
-                two = num1.getText().toString();
-                nu2 = Double.parseDouble(one);
+                two = num2.getText().toString();
+                nu2 = Double.parseDouble(two);
                 resulta = operacionresta(nu1, nu2);
                 Opera = "Resta";
                 Calcular calculo= new Calcular(nu1,nu2,resulta,Opera);
@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
-                two = num1.getText().toString();
-                nu2 = Double.parseDouble(one);
+                two = num2.getText().toString();
+                nu2 = Double.parseDouble(two);
                 resulta = operacionmulti(nu1, nu2);
                 Opera = "Multiplicacion";
                 Calcular calculo= new Calcular(nu1,nu2,resulta,Opera);
@@ -118,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
-                two = num1.getText().toString();
-                nu2 = Double.parseDouble(one);
+                two = num2.getText().toString();
+                nu2 = Double.parseDouble(two);
                 resulta = operaciondivision(nu1, nu2);
                 Opera = "dividir";
                 Log.d("Info",resulta+""+Opera);
@@ -130,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
             }}
         });
+
     }
 
 
