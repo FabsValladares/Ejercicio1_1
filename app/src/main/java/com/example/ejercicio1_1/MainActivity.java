@@ -7,15 +7,18 @@ import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.ejercicio1_1.Calculos.Calcular;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText num1, num2;
-    ImageButton sumar,restar,multiplicar, Dividir;
+    Button sumar,restar,multiplicar, Dividir;
+
     Double resulta, nu1, nu2;
     String Opera,one,two;
 
@@ -29,15 +32,21 @@ public class MainActivity extends AppCompatActivity {
         num2 = (EditText) findViewById(R.id.num2);
 
 
-        sumar = (ImageButton) findViewById(R.id.SUMA);
-        restar = (ImageButton) findViewById(R.id.RESTA);
-        multiplicar = (ImageButton) findViewById(R.id.MULTI);
-        Dividir = (ImageButton) findViewById(R.id.DIVISION);
+        sumar = (Button) findViewById(R.id.SUMA);
+        restar = (Button) findViewById(R.id.RESTA);
+        multiplicar = (Button) findViewById(R.id.MULTI);
+        Dividir = (Button) findViewById(R.id.DIVISION);
 
 
         sumar.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
+                if (num1.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL PRIMER NUMERO!" ,Toast.LENGTH_LONG).show();
+                }else if (num2.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL SEGUNDO NUMERO!" ,Toast.LENGTH_LONG).show();
+                }else{
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
                 two = num1.getText().toString();
@@ -50,13 +59,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
 
-            }
+            }}
         });
 
 
         restar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (num1.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL PRIMER NUMERO!" ,Toast.LENGTH_LONG).show();
+                }else if (num2.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL SEGUNDO NUMERO!" ,Toast.LENGTH_LONG).show();
+                }else{
+
+
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
                 two = num1.getText().toString();
@@ -67,12 +83,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ActivityResultados.class);
                 intent.putExtra("calculo", calculo);
                 startActivity(intent);
-            }
+            }}
         });
 
         multiplicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (num1.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL PRIMER NUMERO!" ,Toast.LENGTH_LONG).show();
+                }else if (num2.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL SEGUNDO NUMERO!" ,Toast.LENGTH_LONG).show();
+                }else{
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
                 two = num1.getText().toString();
@@ -84,12 +105,17 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("calculo", calculo);
                 startActivity(intent);
 
-            }
+            }}
         });
 
         Dividir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (num1.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL PRIMER NUMERO!" ,Toast.LENGTH_LONG).show();
+                }else if (num2.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL SEGUNDO NUMERO!" ,Toast.LENGTH_LONG).show();
+                }else{
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
                 two = num1.getText().toString();
@@ -102,12 +128,9 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("calculo", calculo);
                 startActivity(intent);
 
-            }
+            }}
         });
     }
-
-
-
 
 
 
