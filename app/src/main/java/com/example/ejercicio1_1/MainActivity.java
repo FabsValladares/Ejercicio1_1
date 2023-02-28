@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "¡DEBE DE ESCRIBIR EL SEGUNDO NUMERO!" ,Toast.LENGTH_LONG).show();
                 }else{
 
-
                 one = num1.getText().toString();
                 nu1 = Double.parseDouble(one);
                 two = num2.getText().toString();
